@@ -1,30 +1,35 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
 import 'package:shadow_system/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('ShadowSystem Status and Daily Quest navigation & toggle test',
+      (WidgetTester tester) async {
+    // Build ShadowSystemApp and trigger a frame.
+    await tester.pumpWidget(const ShadowSystemApp());
+    await tester.pumpAndSettle();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // 1. Verify Status Window elements
+    expect(find.text('STATUS WINDOW'), findsOneWidget);
+    expect(find.text('TUSHAR MANKAR'), findsOneWidget);
+    expect(find.text('RANK E'), findsOneWidget);
+    expect(find.text('CORE ATTRIBUTES'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    // 2. Switch to Daily Quests tab via Bottom Navigation
+    await tester.tap(find.text('QUESTS'));
+    await tester.pumpAndSettle();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify Quest Screen elements
+    expect(find.text('DAILY QUESTS'), findsOneWidget);
+    expect(find.text('Physical Conditioning'), findsOneWidget);
+    expect(find.text('Technical Awakening'), findsOneWidget);
+    expect(find.text('Iron Boundaries'), findsOneWidget);
+    expect(find.text('0 / 3 COMPLETED'), findsOneWidget);
+
+    // 3. Toggle the first quest (Physical Conditioning)
+    await tester.tap(find.text('Physical Conditioning'));
+    await tester.pumpAndSettle();
+
+    // Verify progress updated to 1 / 3 COMPLETED
+    expect(find.text('1 / 3 COMPLETED'), findsOneWidget);
   });
 }

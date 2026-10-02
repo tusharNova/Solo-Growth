@@ -1,4 +1,4 @@
-﻿# ⚔️ ShadowSystem — Personal Growth OS
+# ⚔️ ShadowSystem — Personal Growth OS
 
 > *"Arise."*  
 > A real-life Solo Leveling system to push your physical, mental, career, and emotional limits every single day.  
@@ -111,10 +111,10 @@ shadow_system/
 ## 🚀 Phase-by-Phase Build Plan
 
 ### Phase 1 (Week 1): Foundation & UI Shell
-- [ ] `flutter create shadow_system` — Initialize project
-- [ ] Setup dark neon theme (colors, fonts, global styles)
-- [ ] Build Status Screen (Level, Rank badge, 5 Stat bars - hardcoded first)
-- [ ] Build Daily Quest Screen (3 quests with checkboxes)
+- [x] `flutter create shadow_system` — Initialize project
+- [x] Setup dark neon theme (colors, fonts, global styles)
+- [x] Build Status Screen (Level, Rank badge, 5 Stat bars - hardcoded first)
+- [x] Build Daily Quest Screen (3 quests with checkboxes)
 
 ### Phase 2 (Week 2): SQLite + XP Engine
 - [ ] Add `sqflite` and set up `db_helper.dart`

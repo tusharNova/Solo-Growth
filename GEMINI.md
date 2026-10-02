@@ -1,4 +1,4 @@
-﻿# GEMINI.md — ShadowSystem Project Context & Instructions
+# GEMINI.md — ShadowSystem Project Context & Instructions
 
 ## 🎯 Project Identity
 - **App Name:** ShadowSystem
@@ -55,16 +55,23 @@
 ## 📱 Current Build Status
 
 ### Done
-- [x] Project folder: F:\flutter\shadow_system
+- [x] Project workspace initialized (/home/tush/Apps/Solo-Growth)
 - [x] README.md — Full project plan written
 - [x] GEMINI.md — Full context written
+- [x] Verified Flutter environment & resolved compatible dependencies in pubspec.yaml
+- [x] Created `lib/core/constants.dart` (Solo Leveling palette, rank colors, stats)
+- [x] Configured dark neon Solo Leveling theme with GoogleFonts (Orbitron & Rajdhani) in `lib/main.dart`
+- [x] Built `RankBadge` widget (`lib/widgets/rank_badge.dart`)
+- [x] Built glowing `StatBar` widget (`lib/widgets/stat_bar.dart`)
+- [x] Built Status Screen (`lib/screens/status_screen.dart`)
+- [x] Built QuestCard widget (`lib/widgets/quest_card.dart`)
+- [x] Built Daily Quest Screen (`lib/screens/quest_screen.dart` with 3 quests, checkboxes, penalty notice, and claim reward dialog)
+- [x] Built Main Navigation (`lib/screens/main_navigation_screen.dart`) with bottom navigation bar
 
-### Next Step (Start Here)
-- [ ] Run `flutter doctor` to verify Flutter setup is healthy
-- [ ] Run `flutter create shadow_system` inside F:\flutter\shadow_system
-- [ ] Add dependencies to pubspec.yaml (sqflite, provider, fl_chart, flutter_local_notifications, google_fonts)
-- [ ] Set up dark neon theme in main.dart
-- [ ] Build Status Screen first
+### Next Step (Phase 2: SQLite & XP Engine)
+- [ ] Create data models in `lib/models/`: `quest.dart`, `stat.dart`, `user_profile.dart`
+- [ ] Build `lib/database/db_helper.dart` (SQLite database initialization, tables: `quests`, `stats`, `user_profile`, `quest_log`)
+- [ ] Implement `QuestProvider` and `StatsProvider` for state management & SQLite persistence
 
 ---
 
